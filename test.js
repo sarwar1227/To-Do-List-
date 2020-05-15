@@ -11,11 +11,15 @@ function createlistelement()
     ul.appendChild(li);
     input.value=""
 }
-button.addEventListener("click",function(){
+function addListAfterClick()
+{
 	if(inputlength()>0)
-		createlistelement()
-})
-input.addEventListener("keypress",function(event){
+		createlistelement();
+}
+function addListAfterkeypress(event)
+{
 	if(inputlength()>0&&event.keyCode===13)
-		createlistelement()
-})
+		createlistelement();
+}
+button.addEventListener("click",addListAfterClick);
+input.addEventListener("keypress",addListAfterkeypress);
